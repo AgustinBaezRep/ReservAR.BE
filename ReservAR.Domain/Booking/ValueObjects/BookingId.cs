@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ReservAR.Domain.Booking.ValueObjects
 {
-    public sealed class BookingId : ValueObject
+    public sealed class BookingId : AggregateRootId<Guid>
     {
-        public Guid Value { get; set; }
+        public override Guid Value { get; protected set; }
 
         private BookingId(Guid value)
         {
