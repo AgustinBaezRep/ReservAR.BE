@@ -4,7 +4,7 @@ using ReservAR.Domain.Common.Models;
 
 namespace ReservAR.Domain.Booking
 {
-    public sealed class Booking : AggregateRoot<BookingId>
+    public sealed class Booking : AggregateRoot<BookingId, Guid>
     {
         readonly List<BookingItem> _bookingItem = new List<BookingItem>();
 
