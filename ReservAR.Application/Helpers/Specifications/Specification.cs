@@ -19,6 +19,9 @@ namespace ReservAR.Application.Helpers.Specifications
             Criteria = criteria;
         }
 
+        //TODO: agregar paginado y filtrado
+
+        public bool IsSplitQuery { get; protected set; }
         public Expression<Func<TEntity, bool>> Criteria { get; }
         public List<Expression<Func<TEntity, object>>>? Includes { get; set; } = new();
         public Expression<Func<TEntity, object>>? OrderBy { get; private set; }

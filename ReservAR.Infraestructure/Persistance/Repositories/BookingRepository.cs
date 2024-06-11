@@ -3,11 +3,6 @@ using ReservAR.Application.Helpers.Specifications;
 using ReservAR.Application.Helpers.Specifications.BookingSpecifications;
 using ReservAR.Application.IRepositories;
 using ReservAR.Domain.Booking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReservAR.Infraestructure.Persistance.Repositories
 {
