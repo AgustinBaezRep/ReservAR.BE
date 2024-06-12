@@ -19,9 +19,12 @@
     - Conexion a servicios externos
 
 # Arquitectura del proyecto
-![Clear architecture](./docs/images/CleanArchLayers.webp)
+![alt text](CleanArchitechture.png)
 
 Fuente: [Clean Architecture with .NET Core: Getting Started](https://jasontaylor.dev/clean-architecture-getting-started/)
+
+# Diagrama de clases
+![alt text](ReservAR.Tech.png)
 
 # Para crear las Migraciones y correr la Base de Datos
 - Cambiar cadena de conexion
