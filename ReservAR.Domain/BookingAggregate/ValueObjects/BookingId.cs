@@ -1,4 +1,4 @@
-﻿using ReservAR.Domain.Common.Models;
+﻿using ReservAR.Domain.Common.Models.Identities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

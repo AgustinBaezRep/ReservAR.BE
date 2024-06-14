@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using ReservAR.Application.IRepositories;
 using ReservAR.Domain.User;
 using ReservAR.Infraestructure;
-using ReservAR.Infraestructure.Persistance.Repositories;
 
 namespace ReservAR.Presentation
 {

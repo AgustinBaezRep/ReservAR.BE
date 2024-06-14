@@ -1,6 +1,7 @@
-﻿using ReservAR.Domain.Booking;
+﻿using ReservAR.Application.Common.Specifications;
+using ReservAR.Domain.Booking;
 
-namespace ReservAR.Application.Helpers.Specifications.BookingSpecifications
+namespace ReservAR.Application.Common.Specifications.BookingSpecifications
 {
     public class PriceLowerBookingSpecification : Specification<Booking>
     {

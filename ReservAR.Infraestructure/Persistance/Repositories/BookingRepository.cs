@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ReservAR.Application.Helpers.Specifications;
-using ReservAR.Application.Helpers.Specifications.BookingSpecifications;
-using ReservAR.Application.IRepositories;
+using ReservAR.Application.Common.Interfaces.IRepositories;
+using ReservAR.Application.Common.Specifications;
+using ReservAR.Application.Common.Specifications.BookingSpecifications;
 using ReservAR.Domain.Booking;
 
 namespace ReservAR.Infraestructure.Persistance.Repositories

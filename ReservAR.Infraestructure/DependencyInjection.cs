@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ReservAR.Application.IRepositories;
+using ReservAR.Application.Common.Interfaces.IRepositories;
 using ReservAR.Infraestructure.Persistance.Repositories;
 
 namespace ReservAR.Infraestructure

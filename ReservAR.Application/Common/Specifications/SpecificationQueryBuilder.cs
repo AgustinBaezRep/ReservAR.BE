@@ -1,4 +1,4 @@
-﻿namespace ReservAR.Application.Helpers.Specifications
+﻿namespace ReservAR.Application.Common.Specifications
 {
     public static class SpecificationQueryBuilder
     {

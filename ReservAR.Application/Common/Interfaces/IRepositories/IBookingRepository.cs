@@ -1,7 +1,7 @@
-﻿using ReservAR.Application.Helpers.Specifications.BookingSpecifications;
+﻿using ReservAR.Application.Common.Specifications.BookingSpecifications;
 using ReservAR.Domain.Booking;
 
-namespace ReservAR.Application.IRepositories
+namespace ReservAR.Application.Common.Interfaces.IRepositories
 {
     public interface IBookingRepository
     {

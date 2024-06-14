@@ -1,18 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReservAR.Domain.Common.Models
+﻿namespace ReservAR.Domain.Common.Models
 {
-    public abstract class AggregateRoot<TId, TIdType> : Entity<TId> 
-        where TId : AggregateRootId<TIdType>
+    public abstract class AggregateRoot<TId> : EntityBase<TId>, IAuditableAggregate
+    where TId : ValueObject
     {
-        public new AggregateRootId<TIdType> Id { get; protected set; }
+        public DateTime CreatedDateTime { get; private set; }
+        public DateTime UpdatedDateTime { get; private set; }
+        public DateTime? DeletedDateTime { get; private set; }
+        public bool IsDeleted { get; private set; }
 
-        protected AggregateRoot(TId id) : base(id) { }
+        protected AggregateRoot() : base() { }
 
-        protected AggregateRoot() { }
+        public void SetCreatedData(DateTime createdDateTime)
+        {
+            CreatedDateTime = createdDateTime;
+            UpdatedDateTime = createdDateTime;
+        }
+
+        public void SetUpdatedData(DateTime updatedDateTime)
+        {
+            UpdatedDateTime = updatedDateTime;
+        }
+
+        public void SetDeletedData(DateTime deletedDateTime)
+        {
+            DeletedDateTime = deletedDateTime;
+            IsDeleted = true;
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservAR.Application.Helpers.Specifications
+namespace ReservAR.Application.Common.Specifications
 {
     public abstract class Specification<TEntity>
     {

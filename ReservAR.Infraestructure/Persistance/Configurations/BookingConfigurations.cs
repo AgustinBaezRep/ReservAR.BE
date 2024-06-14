@@ -15,45 +15,45 @@ namespace ReservAR.Infraestructure.Persistance.Configurations
 
         private void ConfigureBookingItemsTable(EntityTypeBuilder<Booking> builder)
         {
-            builder.OwnsMany(m => m.BookingItems, sb =>
-            {
-                sb.ToTable("BookingItems");
+            //builder.OwnsMany(m => m.BookingItems, sb =>
+            //{
+            //    sb.ToTable("BookingItems");
 
-                sb.WithOwner().HasForeignKey("BookingId");
+            //    sb.WithOwner().HasForeignKey("BookingId");
 
-                sb.HasKey("Id", "BookingId");
+            //    sb.HasKey("Id", "BookingId");
 
-                sb.Property(m => m.Id)
-                    .HasColumnName("BookingItemId")
-                    .ValueGeneratedNever()
-                    .HasConversion(
-                        id => id.Value,
-                        value => BookingItemId.Create(value));
+            //    sb.Property(m => m.Id)
+            //        .HasColumnName("BookingItemId")
+            //        .ValueGeneratedNever()
+            //        .HasConversion(
+            //            id => id.Value,
+            //            value => BookingItemId.Create(value));
 
-                sb.Property(m => m.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
+            //    sb.Property(m => m.Name)
+            //        .IsRequired()
+            //        .HasMaxLength(50);
 
-                sb.Property(m => m.Description)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
+            //    sb.Property(m => m.Description)
+            //        .IsRequired()
+            //        .HasMaxLength(50);
+            //});
         }
 
         private void ConfigureBookingTable(EntityTypeBuilder<Booking> builder)
         {
-            builder.ToTable("Booking");
+            //builder.ToTable("Booking");
 
-            builder.HasKey(m => m.Id);
+            //builder.HasKey(m => m.Id);
 
-            builder.Property(m => m.Id)
-                .ValueGeneratedNever()
-                .HasConversion(
-                    id => id.Value,
-                    value => BookingId.Create(value));
+            //builder.Property(m => m.Id)
+            //    .ValueGeneratedNever()
+            //    .HasConversion(
+            //        id => id.Value,
+            //        value => BookingId.Create(value));
 
-            builder.Property(m => m.Duration)
-                .HasMaxLength(20);
+            //builder.Property(m => m.Duration)
+            //    .HasMaxLength(20);
         }
     }
 }

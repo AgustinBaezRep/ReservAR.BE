@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Common\Enums\" />
+    <Folder Include="Common\Requests\" />
+    <Folder Include="Common\Responses\" />
   </ItemGroup>
 
 </Project>
