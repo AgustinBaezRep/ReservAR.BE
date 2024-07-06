@@ -1,6 +1,6 @@
 ﻿namespace ReservAR.Domain.Common.Models
 {
-    public abstract class AggregateRoot<TId> : EntityBase<TId>, IAuditableAggregate
+    public abstract class AggregateRoot<TId> : EntityBase<TId>, IAuditableAggregate, IHasDomainEvents
     where TId : ValueObject
     {
         public DateTime CreatedDateTime { get; private set; }

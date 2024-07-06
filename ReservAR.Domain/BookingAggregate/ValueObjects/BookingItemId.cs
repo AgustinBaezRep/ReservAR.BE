@@ -1,4 +1,5 @@
 ﻿using ReservAR.Domain.Common.Models;
+using ReservAR.Domain.Common.Models.Identities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace ReservAR.Domain.Booking.ValueObjects
 {
-    public sealed class BookingItemId : ValueObject
+    public sealed class BookingItemId : EntityId
     {
-        public Guid Value { get; set; }
-
-        private BookingItemId(Guid value)
-        {
-            Value = value;
-        }
+        private BookingItemId(Guid value) : base(value) { }
 
         public static BookingItemId CreateUnique()
         {

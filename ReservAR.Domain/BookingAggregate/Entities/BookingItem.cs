@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace ReservAR.Domain.Booking.Entities
 {
-    public sealed class BookingItem : Entity<BookingItemId>
+    public sealed class BookingItem : EntityBase<BookingItemId>
     {
         public string Name { get; set; }
         public string Description { get; set; }
 
-        private BookingItem(BookingItemId id, string name, string description) : base(id)
+        public BookingItem() : base() { }
+
+        private BookingItem(BookingItemId id, string name, string description)
         {
             Name = name;
             Description = description;
         }
-
-        private BookingItem() { }
     }
 }

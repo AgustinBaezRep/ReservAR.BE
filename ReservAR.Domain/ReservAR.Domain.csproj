@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\DomainErrors\" />
-    <Folder Include="Common\ValueObjects\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Ardalis.SmartEnum" Version="8.0.0" />
     <PackageReference Include="ErrorOr" Version="1.9.0" />
     <PackageReference Include="MediatR" Version="12.3.0" />

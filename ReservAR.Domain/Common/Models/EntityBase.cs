@@ -48,3 +48,4 @@
             _domainEvents.Clear();
         }
     }
+}

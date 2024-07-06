@@ -4,7 +4,7 @@ using ReservAR.Domain.Common.Models;
 
 namespace ReservAR.Domain.Booking
 {
-    public sealed class Booking : AggregateRoot<BookingId, Guid>
+    public sealed class Booking : AggregateRoot<BookingId>
     {
         readonly List<BookingItem> _bookingItem = new List<BookingItem>();
 
@@ -13,9 +13,9 @@ namespace ReservAR.Domain.Booking
         public decimal Price { get; private set; }
         public IReadOnlyList<BookingItem> BookingItems => _bookingItem.ToList();
 
-        private Booking() { }
+        public Booking() { }
 
-        private Booking(BookingId id, string duration, bool fixedPrice, decimal price) : base(id)
+        private Booking(BookingId id, string duration, bool fixedPrice, decimal price)
         {
             Duration = duration;
             Fixed = fixedPrice;

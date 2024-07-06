@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 
 namespace ReservAR.Domain.Booking.ValueObjects
 {
-    public sealed class BookingId : AggregateRootId<Guid>
+    public sealed class BookingId : AggregateRootId
     {
-        public override Guid Value { get; protected set; }
-
-        private BookingId(Guid value)
-        {
-            Value = value;
-        }
+        private BookingId(Guid value) : base(value) { }
 
         public static BookingId CreateUnique()
         {
