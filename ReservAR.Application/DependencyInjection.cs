@@ -6,6 +6,8 @@ namespace ReservAR.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            // services
+
             return services;
         }
     }

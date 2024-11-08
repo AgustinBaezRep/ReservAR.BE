@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
 using ReservAR.Application;
-using ReservAR.Domain.User;
 using ReservAR.Infraestructure;
 using ReservAR.Presentation;
 using Swashbuckle.AspNetCore.Filters;
@@ -34,8 +32,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.MapIdentityApi<User>();
 
 app.UseHttpsRedirection();
 

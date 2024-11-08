@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReservAR.Domain\ReservAR.Domain.csproj" />
+    <Folder Include="Models\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Services\" />
+    <Folder Include="Options\" />
   </ItemGroup>
 
 </Project>

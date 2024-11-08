@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace ReservAR.Presentation.Controllers
 {
@@ -13,7 +11,7 @@ namespace ReservAR.Presentation.Controllers
 
         }
 
-        [HttpGet, Authorize]
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             await Task.CompletedTask;

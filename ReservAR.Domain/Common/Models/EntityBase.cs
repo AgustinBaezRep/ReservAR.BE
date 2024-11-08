@@ -1,51 +1,50 @@
-﻿namespace ReservAR.Domain.Common.Models
+﻿namespace ReservAR.Domain.Common.Models;
+
+public abstract class EntityBase<TId> : IEquatable<EntityBase<TId>>, IHasDomainEvents
+where TId : ValueObject
 {
-    public abstract class EntityBase<TId> : IEquatable<EntityBase<TId>>, IHasDomainEvents
-    where TId : ValueObject
+    private readonly List<IDomainEvent> _domainEvents = [];
+
+    public TId Id { get; protected set; }
+
+    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
+    protected EntityBase()
     {
-        private readonly List<IDomainEvent> _domainEvents = [];
+    }
 
-        public TId Id { get; protected set; }
+    public override bool Equals(object? obj)
+    {
+        return obj is EntityBase<TId> entity && Id.Equals(entity.Id);
+    }
 
-        public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+    public bool Equals(EntityBase<TId>? other)
+    {
+        return Equals((object?)other);
+    }
 
-        protected EntityBase()
-        {
-        }
+    public static bool operator ==(EntityBase<TId> left, EntityBase<TId> right)
+    {
+        return Equals(left, right);
+    }
 
-        public override bool Equals(object? obj)
-        {
-            return obj is EntityBase<TId> entity && Id.Equals(entity.Id);
-        }
+    public static bool operator !=(EntityBase<TId> left, EntityBase<TId> right)
+    {
+        return !Equals(left, right);
+    }
 
-        public bool Equals(EntityBase<TId>? other)
-        {
-            return Equals((object?)other);
-        }
+    public override int GetHashCode()
+    {
+        return Id.GetHashCode();
+    }
 
-        public static bool operator ==(EntityBase<TId> left, EntityBase<TId> right)
-        {
-            return Equals(left, right);
-        }
+    protected void AddDomainEvent(IDomainEvent domainEvent)
+    {
+        _domainEvents.Add(domainEvent);
+    }
 
-        public static bool operator !=(EntityBase<TId> left, EntityBase<TId> right)
-        {
-            return !Equals(left, right);
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
-
-        protected void AddDomainEvent(IDomainEvent domainEvent)
-        {
-            _domainEvents.Add(domainEvent);
-        }
-
-        public void ClearDomainEvents()
-        {
-            _domainEvents.Clear();
-        }
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
     }
 }

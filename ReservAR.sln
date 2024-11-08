@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservAR.Presentation", "ReservAR.Presentation\ReservAR.Presentation.csproj", "{5BE72671-2512-455B-BF32-9BD7806EB23F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservAR.Presentation", "ReservAR.Presentation\ReservAR.Presentation.csproj", "{5BE72671-2512-455B-BF32-9BD7806EB23F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservAR.Contracts", "ReservAR.Contracts\ReservAR.Contracts.csproj", "{C1544FB6-3C54-41E3-AEBA-D3B575AF2951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservAR.Contracts", "ReservAR.Contracts\ReservAR.Contracts.csproj", "{C1544FB6-3C54-41E3-AEBA-D3B575AF2951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservAR.Domain", "ReservAR.Domain\ReservAR.Domain.csproj", "{0001EF6B-7EDD-4146-8452-B9153DFE62A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservAR.Domain", "ReservAR.Domain\ReservAR.Domain.csproj", "{0001EF6B-7EDD-4146-8452-B9153DFE62A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservAR.Application", "ReservAR.Application\ReservAR.Application.csproj", "{AA941E89-4A00-49EF-8019-FC0F2E602F25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservAR.Application", "ReservAR.Application\ReservAR.Application.csproj", "{AA941E89-4A00-49EF-8019-FC0F2E602F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservAR.Infraestructure", "ReservAR.Infraestructure\ReservAR.Infraestructure.csproj", "{EFA722CE-5A67-44A9-BF02-7D8426A601F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservAR.Infraestructure", "ReservAR.Infraestructure\ReservAR.Infraestructure.csproj", "{EFA722CE-5A67-44A9-BF02-7D8426A601F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservAR.Authentication", "ReservAR.Authentication\ReservAR.Authentication.csproj", "{68C5A3A3-E454-4C10-92C4-06945E478B09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EFA722CE-5A67-44A9-BF02-7D8426A601F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFA722CE-5A67-44A9-BF02-7D8426A601F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFA722CE-5A67-44A9-BF02-7D8426A601F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C5A3A3-E454-4C10-92C4-06945E478B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C5A3A3-E454-4C10-92C4-06945E478B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C5A3A3-E454-4C10-92C4-06945E478B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C5A3A3-E454-4C10-92C4-06945E478B09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

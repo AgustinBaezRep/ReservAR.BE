@@ -2,15 +2,14 @@
 using ReservAR.Domain.Common.Models;
 using ReservAR.Domain.Common.Models.Identities;
 
-namespace ReservAR.Application.Common
+namespace ReservAR.Application.Common;
+
+public class AggregateLoader : IAggregateLoader
 {
-    public class AggregateLoader : IAggregateLoader
+    public TAggregate CreateAggregate<TAggregate, TId>()
+        where TAggregate : AggregateRoot<TId>
+        where TId : AggregateRootId
     {
-        public TAggregate CreateAggregate<TAggregate, TId>()
-            where TAggregate : AggregateRoot<TId>
-            where TId : AggregateRootId
-        {
-            return Activator.CreateInstance<TAggregate>();
-        }
+        return Activator.CreateInstance<TAggregate>();
     }
 }
