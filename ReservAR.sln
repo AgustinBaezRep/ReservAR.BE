@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservAR.Infraestructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservAR.Authentication", "ReservAR.Authentication\ReservAR.Authentication.csproj", "{68C5A3A3-E454-4C10-92C4-06945E478B09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EA2C37C9-4DBC-4C62-A2A2-EB6F553AC65D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{084F068F-F0A9-429F-939E-81BF718365B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5BE72671-2512-455B-BF32-9BD7806EB23F} = {EA2C37C9-4DBC-4C62-A2A2-EB6F553AC65D}
+		{C1544FB6-3C54-41E3-AEBA-D3B575AF2951} = {EA2C37C9-4DBC-4C62-A2A2-EB6F553AC65D}
+		{0001EF6B-7EDD-4146-8452-B9153DFE62A2} = {EA2C37C9-4DBC-4C62-A2A2-EB6F553AC65D}
+		{AA941E89-4A00-49EF-8019-FC0F2E602F25} = {EA2C37C9-4DBC-4C62-A2A2-EB6F553AC65D}
+		{EFA722CE-5A67-44A9-BF02-7D8426A601F2} = {EA2C37C9-4DBC-4C62-A2A2-EB6F553AC65D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A143BBC-A6C8-4502-82A7-F5D45AC41A63}
