@@ -6,22 +6,11 @@ using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-    {
-        In = ParameterLocation.Header,
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey
-    });
 
-    options.OperationFilter<SecurityRequirementsOperationFilter>();
-});
 
 builder.Services
-    .AddPresentation(builder)
+    .AddPresentation()
     .AddApplication()
     .AddInfraestructure();
 
@@ -33,10 +22,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseExceptionHandler();
+app.UseStatusCodePages();
+
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+//app.Seed();
 
 app.Run();

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -21,6 +21,11 @@
     <ProjectReference Include="..\ReservAR.Application\ReservAR.Application.csproj" />
     <ProjectReference Include="..\ReservAR.Contracts\ReservAR.Contracts.csproj" />
     <ProjectReference Include="..\ReservAR.Infraestructure\ReservAR.Infraestructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Mappings\" />
+    <Folder Include="Common\Seeds\" />
   </ItemGroup>
 
 </Project>

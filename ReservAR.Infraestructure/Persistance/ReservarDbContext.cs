@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ReservAR.Infraestructure
+namespace ReservAR.Infraestructure.Persistance
 {
     public class ReservarDbContext : DbContext
     {

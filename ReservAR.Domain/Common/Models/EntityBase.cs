@@ -1,13 +1,11 @@
 ﻿namespace ReservAR.Domain.Common.Models;
 
-public abstract class EntityBase<TId> : IEquatable<EntityBase<TId>>, IHasDomainEvents
+public abstract class EntityBase<TId> : IEquatable<EntityBase<TId>>
 where TId : ValueObject
 {
     private readonly List<IDomainEvent> _domainEvents = [];
 
     public TId Id { get; protected set; }
-
-    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
     protected EntityBase()
     {
@@ -36,15 +34,5 @@ where TId : ValueObject
     public override int GetHashCode()
     {
         return Id.GetHashCode();
-    }
-
-    protected void AddDomainEvent(IDomainEvent domainEvent)
-    {
-        _domainEvents.Add(domainEvent);
-    }
-
-    public void ClearDomainEvents()
-    {
-        _domainEvents.Clear();
     }
 }
