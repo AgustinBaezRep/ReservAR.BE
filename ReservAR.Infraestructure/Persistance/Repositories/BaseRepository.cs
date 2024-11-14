@@ -3,9 +3,9 @@ using ReservAR.Domain.Common.Models.Identities;
 using ReservAR.Domain.Common.Models;
 using System.Linq.Expressions;
 using ReservAR.Application.Common.Interfaces.IRepositories;
+using ReservAR.Infraestructure.Specifications.Common;
 
 namespace ReservAR.Infraestructure.Persistance.Repositories;
-
 
 internal abstract class RepositoryBase<TEntity, TId>(ReservarDbContext transferPricingDbContext) : IRepositoryBase<TEntity, TId>
     where TEntity : AggregateRoot<TId>

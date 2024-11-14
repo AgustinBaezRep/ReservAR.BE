@@ -1,8 +1,5 @@
-using Microsoft.OpenApi.Models;
-using ReservAR.Application;
 using ReservAR.Infraestructure;
 using ReservAR.Presentation;
-using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +8,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services
     .AddPresentation()
-    .AddApplication()
     .AddInfraestructure();
 
 var app = builder.Build();
