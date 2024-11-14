@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Infrastructure;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.OpenApi.Models;
 using ReservAR.Application.Helpers.Errors;
 using Swashbuckle.AspNetCore.Filters;
@@ -10,9 +11,10 @@ namespace ReservAR.Presentation
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDataDrivenConsultingProblemDetails();
-            services.AddSwagger();
-            services.AddAuthentication();
+
+            services.AddDataDrivenConsultingProblemDetails()
+                .AddSwagger()
+                .AddAuthentication();
 
             return services;
         }
@@ -44,9 +46,10 @@ namespace ReservAR.Presentation
             return services;
         }
 
-
         public static IServiceCollection AddAuthentication(this IServiceCollection services, WebApplicationBuilder configuration)
         {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer();
 
             return services;
         }

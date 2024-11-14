@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ReservAR.Application\ReservAR.Application.csproj" />
+    <ProjectReference Include="..\ReservAR.Authentication\ReservAR.Authentication.csproj" />
   </ItemGroup>
 
   <ItemGroup>

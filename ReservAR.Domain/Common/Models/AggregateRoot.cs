@@ -16,7 +16,7 @@ where TId : ValueObject
 
     public void ClearDomainEvents() => _domainEvents.Clear();
 
-    protected void AddDomainEvents(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
+    protected void AddDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
 
     public void SetCreatedData(DateTime createdDateTime)
     {
