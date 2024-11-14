@@ -7,12 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Errors\" />
-    <Folder Include="Common\ValueObjects\" />
+    <PackageReference Include="Ardalis.SmartEnum" Version="8.0.0" />
+    <PackageReference Include="ErrorOr" Version="1.9.0" />
+    <PackageReference Include="MediatR" Version="12.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
+    <Folder Include="Common\DomainErrors\" />
   </ItemGroup>
 
 </Project>

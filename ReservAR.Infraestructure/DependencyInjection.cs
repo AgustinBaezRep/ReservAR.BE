@@ -1,24 +1,34 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ReservAR.Application.IRepositories;
-using ReservAR.Infraestructure.Persistance.Repositories;
+using ReservAR.Infraestructure.Persistance;
 
 namespace ReservAR.Infraestructure
 {
     public static class DependencyInjection
     {
+        private const string CONNECTION_STRING = "Server=DESKTOP-O5UPP07;Database=ReservarDb;Trusted_Connection=True;TrustServerCertificate=True;";
         public static IServiceCollection AddInfraestructure(this IServiceCollection services)
         {
-            services.AddPersistance();
+            services
+                .AddPersistance()
+                .AddRepositories();
 
             return services;
         }
 
         public static IServiceCollection AddPersistance(this IServiceCollection services)
         {
-            const string connectionString = "Server=DESKTOP-O5UPP07;Database=ReservarDb;Trusted_Connection=True;TrustServerCertificate=True;";
-            services.AddDbContext<ReservarDbContext>(options => options.UseSqlServer(connectionString));
-            services.AddScoped<IBookingRepository, BookingRepository>();
+            const string connectionString = CONNECTION_STRING;
+
+            services.AddDbContext<ReservarDbContext>(
+                options => options.UseSqlServer(connectionString));
+
+            return services;
+        }
+
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            // repositories
 
             return services;
         }

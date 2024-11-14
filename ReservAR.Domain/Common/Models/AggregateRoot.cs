@@ -1,18 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ReservAR.Domain.Common.Models;
 
-namespace ReservAR.Domain.Common.Models
+public abstract class AggregateRoot<TId> : EntityBase<TId>, IAuditableAggregate, IHasDomainEvents
+where TId : ValueObject
 {
-    public abstract class AggregateRoot<TId, TIdType> : Entity<TId> 
-        where TId : AggregateRootId<TIdType>
+    private readonly List<IDomainEvent> _domainEvents = [];
+
+    public DateTime CreatedDateTime { get; private set; }
+    public DateTime UpdatedDateTime { get; private set; }
+    public DateTime? DeletedDateTime { get; private set; }
+    public bool IsDeleted { get; private set; }
+
+    protected AggregateRoot() : base() { }
+
+    public IReadOnlyCollection<IDomainEvent> GetDomainEvents() => _domainEvents.ToList();
+
+    public void ClearDomainEvents() => _domainEvents.Clear();
+
+    protected void AddDomainEvents(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
+
+    public void SetCreatedData(DateTime createdDateTime)
     {
-        public new AggregateRootId<TIdType> Id { get; protected set; }
+        CreatedDateTime = createdDateTime;
+        UpdatedDateTime = createdDateTime;
+    }
 
-        protected AggregateRoot(TId id) : base(id) { }
+    public void SetUpdatedData(DateTime updatedDateTime)
+    {
+        UpdatedDateTime = updatedDateTime;
+    }
 
-        protected AggregateRoot() { }
+    public void SetDeletedData(DateTime deletedDateTime)
+    {
+        DeletedDateTime = deletedDateTime;
+        IsDeleted = true;
     }
 }
