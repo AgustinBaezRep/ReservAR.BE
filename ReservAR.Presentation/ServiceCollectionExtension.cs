@@ -13,7 +13,7 @@ namespace ReservAR.Presentation
         {
             services.AddControllers();
 
-            services.AddDataDrivenConsultingProblemDetails()
+            services.AddReservARConsultingProblemDetails()
                 .AddEndpointsApiExplorer()
                 .AddOptionsConfiguration()
                 .AddSwagger()
@@ -30,7 +30,7 @@ namespace ReservAR.Presentation
             return services;
         }
 
-        private static IServiceCollection AddDataDrivenConsultingProblemDetails(this IServiceCollection services)
+        private static IServiceCollection AddReservARConsultingProblemDetails(this IServiceCollection services)
         {
             services.AddProblemDetails();
             services.AddExceptionHandler<CustomExceptionHandler>();

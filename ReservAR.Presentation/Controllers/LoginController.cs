@@ -13,20 +13,12 @@ public class LoginController(ISender mediator) : ApiController
     [HttpPost]
     public async Task<IActionResult> GetAccessToken([FromBody] LoginRequest request, CancellationToken cancellationToken)
     {
-        try
-        {
-            var command = request.ToLoginCommand();
+        var command = request.ToLoginCommand();
 
-            var getAccessTokenResult = await _mediator.Send(command, cancellationToken);
+        var getAccessTokenResult = await _mediator.Send(command, cancellationToken);
 
-            return getAccessTokenResult.Match(
-                Ok,
-                Problem);
-        }
-        catch (Exception e)
-        {
-
-            throw e;
-        }
+        return getAccessTokenResult.Match(
+            Ok,
+            Problem);
     }
 }
