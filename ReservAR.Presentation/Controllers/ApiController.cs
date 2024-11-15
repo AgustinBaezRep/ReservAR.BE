@@ -7,7 +7,7 @@ using ReservAR.Presentation.Common.Http;
 namespace ReservAR.Presentation.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ApiController : ControllerBase
     {
         protected IActionResult Problem(List<Error> errors)

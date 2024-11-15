@@ -6,10 +6,10 @@ namespace ReservAR.Domain.UserAggregate;
 
 public class User : AggregateRoot<UserId>
 {
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public string Email { get; private set; }
-    public string Password { get; private set; }
+    public string FirstName { get; private set; } = "Agustin";
+    public string LastName { get; private set; } = "Baez";
+    public string Email { get; private set; } = "Agustin@hotmail.com";
+    public string Password { get; private set; } = "Agustin123";
 
 
     public User() : base() { }

@@ -8,11 +8,11 @@ using System.Reflection;
 
 namespace ReservAR.Application
 {
-    public static class DependencyInjection
+    public static class ServiceCollectionExtension
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ServiceCollectionExtension).Assembly));
 
             services.AddScoped(
                 typeof(IPipelineBehavior<,>),

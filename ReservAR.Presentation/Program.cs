@@ -4,8 +4,6 @@ using ReservAR.Presentation;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-
 builder.Services
     .AddPresentation()
     .AddApplication()

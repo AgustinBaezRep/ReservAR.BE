@@ -2,19 +2,30 @@
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.OpenApi.Models;
 using ReservAR.Application.Helpers.Errors;
+using ReservAR.Presentation.Common.OptionsSetup;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace ReservAR.Presentation
 {
-    public static class DependencyInjection
+    public static class ServiceCollectionExtension
     {
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
             services.AddControllers();
 
             services.AddDataDrivenConsultingProblemDetails()
+                .AddEndpointsApiExplorer()
+                .AddOptionsConfiguration()
                 .AddSwagger()
                 .AddAuthentication();
+
+            return services;
+        }
+
+        private static IServiceCollection AddOptionsConfiguration(this IServiceCollection services)
+        {
+            services.ConfigureOptions<JwtOptionsSetup>();
+            services.ConfigureOptions<JwtBearerOptionsSetup>();
 
             return services;
         }
@@ -46,7 +57,7 @@ namespace ReservAR.Presentation
             return services;
         }
 
-        public static IServiceCollection AddAuthentication(this IServiceCollection services, WebApplicationBuilder configuration)
+        public static IServiceCollection AddAuthentication(this IServiceCollection services)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer();

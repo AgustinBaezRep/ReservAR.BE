@@ -13,7 +13,11 @@ public class TokenGeneratorService(IOptions<JwtOptions> options) : ITokenGenerat
 
     public string GenerateJwtTokenWithCredentials()
     {
-        var claims = new Claim[] { };
+        var claims = new Claim[] {
+            new(JwtRegisteredClaimNames.Sub, "id"),
+            new(JwtRegisteredClaimNames.Email, "email"),
+            new("Role", "RoleEnum.XXX")
+        };
 
         var signinCredentials = new SigningCredentials(
             new SymmetricSecurityKey(
