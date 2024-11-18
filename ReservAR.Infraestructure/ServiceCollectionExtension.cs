@@ -14,8 +14,8 @@ namespace ReservAR.Infraestructure
 {
     public static class ServiceCollectionExtension
     {
-        private const string CONNECTION_STRING = 
-            "Server=DESKTOP-O5UPP07;Database=ReservarDb;Trusted_Connection=True;TrustServerCertificate=True;";
+        private const string CONNECTION_STRING =
+            "Server=localhost;Database=ReservarDb;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public static IServiceCollection AddInfraestructure(this IServiceCollection services)
         {

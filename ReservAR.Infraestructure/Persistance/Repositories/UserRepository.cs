@@ -10,11 +10,9 @@ internal class UserRepository(ReservarDbContext dbContext) : RepositoryBase<User
 {
     public async Task<User?> GetUserByEmailAsync(LoginCommand userCommand, CancellationToken cancellation)
     {
-        //var user = await DbQuery
-        //    .FirstOrDefaultAsync(user => user.Email.Equals(userCommand.email) && user.Password.Equals(userCommand.password));
+        var user = await DbQuery
+            .FirstOrDefaultAsync(user => user.Email.Equals(userCommand.email));
 
-        //return user;
-
-        return new User();
+        return user;
     }
 }

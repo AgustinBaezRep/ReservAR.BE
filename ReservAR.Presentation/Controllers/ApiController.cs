@@ -1,5 +1,4 @@
 ﻿using ErrorOr;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc;
 using ReservAR.Presentation.Common.Http;
@@ -7,7 +6,6 @@ using ReservAR.Presentation.Common.Http;
 namespace ReservAR.Presentation.Controllers
 {
     [ApiController]
-    //[Authorize]
     public class ApiController : ControllerBase
     {
         protected IActionResult Problem(List<Error> errors)

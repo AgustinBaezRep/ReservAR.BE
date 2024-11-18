@@ -24,7 +24,6 @@ sealed class LoginCommandHandler(IUserRepository userRepository,
 
         string token = _authenticationService.GetAccessTokenAsync(loginRequest);
 
-
         return token;
     }
 }
