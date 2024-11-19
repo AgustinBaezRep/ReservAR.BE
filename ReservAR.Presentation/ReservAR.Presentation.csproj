@@ -23,9 +23,4 @@
     <ProjectReference Include="..\ReservAR.Infraestructure\ReservAR.Infraestructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\Mappings\" />
-    <Folder Include="Common\Seeds\" />
-  </ItemGroup>
-
 </Project>

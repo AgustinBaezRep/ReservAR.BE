@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\DomainErrors\" />
+    <Folder Include="UserAggregate\Enums\" />
   </ItemGroup>
 
 </Project>

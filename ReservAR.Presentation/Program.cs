@@ -1,13 +1,12 @@
+using ReservAR.Application;
 using ReservAR.Infraestructure;
 using ReservAR.Presentation;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-
-
 builder.Services
     .AddPresentation()
+    .AddApplication()
     .AddInfraestructure();
 
 var app = builder.Build();
@@ -25,11 +24,11 @@ app.UseStaticFiles();
 app.UseExceptionHandler();
 app.UseStatusCodePages();
 
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-//app.Seed();
+app.Seed();
 
 app.Run();
