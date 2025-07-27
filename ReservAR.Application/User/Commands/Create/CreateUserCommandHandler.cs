@@ -9,7 +9,7 @@ using ReservAR.Domain.Common.DomainErrors;
 
 namespace ReservAR.Application.User.Commands.Create;
 
-sealed class CreateUserCommandHandler(IUserRepository userRepository,
+public sealed class CreateUserCommandHandler(IUserRepository userRepository,
     IAggregateLoader aggregateLoader) :
         CommandHandlerBase<Domain.UserAggregate.User, UserId>(aggregateLoader),
         IRequestHandler<CreateUserCommand, ErrorOr<Created>>

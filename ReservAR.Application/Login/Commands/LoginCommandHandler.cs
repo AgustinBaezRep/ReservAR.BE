@@ -7,8 +7,9 @@ using ReservAR.Domain.Common.DomainErrors;
 
 namespace ReservAR.Application.Login.Commands;
 
-sealed class LoginCommandHandler(IUserRepository userRepository,
-    IAuthenticationService authenticationService) : IRequestHandler<LoginCommand, ErrorOr<string>>
+public sealed class LoginCommandHandler(IUserRepository userRepository,
+    IAuthenticationService authenticationService) : 
+        IRequestHandler<LoginCommand, ErrorOr<string>>
 {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly IAuthenticationService _authenticationService = authenticationService;
@@ -18,7 +19,7 @@ sealed class LoginCommandHandler(IUserRepository userRepository,
         var user = await _userRepository.GetUserByEmailAsync(request, cancellationToken);
 
         if (user is null)
-            return Errors.User.IncorrectCredentials();
+            return Errors.Login.IncorrectCredentials();
 
         var loginRequest = request.ToLoginRequest();
 
