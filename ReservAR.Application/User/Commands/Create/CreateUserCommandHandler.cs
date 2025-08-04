@@ -11,7 +11,7 @@ namespace ReservAR.Application.User.Commands.Create;
 
 public sealed class CreateUserCommandHandler(IUserRepository userRepository,
     IAggregateLoader aggregateLoader) :
-        CommandHandlerBase<Domain.UserAggregate.User, UserId>(aggregateLoader),
+        CommandHandlerBase<Domain.UserAggregate.Usuario, UsuarioId>(aggregateLoader),
         IRequestHandler<CreateUserCommand, ErrorOr<Created>>
 {
     private readonly IUserRepository _userRepository = userRepository;

@@ -3,7 +3,7 @@ using ReservAR.Domain.UserAggregate.ValueObjects;
 
 namespace ReservAR.Application.Common.Interfaces.IRepositories;
 
-public interface IUserRepository : IRepositoryBase<Domain.UserAggregate.User, UserId>
+public interface IUserRepository : IRepositoryBase<Domain.UserAggregate.Usuario, UsuarioId>
 {
-    Task<Domain.UserAggregate.User?> GetUserByEmailAsync(LoginCommand userCommand, CancellationToken cancellation);
+    Task<Domain.UserAggregate.Usuario?> GetUserByEmailAsync(LoginCommand userCommand, CancellationToken cancellation);
 }

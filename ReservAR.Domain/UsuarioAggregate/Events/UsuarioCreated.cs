@@ -2,4 +2,4 @@
 
 namespace ReservAR.Domain.UserAggregate.Events;
 
-public record UserCreated(User user) : IDomainEvent;
+public record UsuarioCreated(Usuario user) : IDomainEvent;
