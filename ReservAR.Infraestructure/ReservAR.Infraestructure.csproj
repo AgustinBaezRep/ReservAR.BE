@@ -27,4 +27,8 @@
     <PackageReference Include="Quartz.Extensions.Hosting" Version="3.13.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistance\Configurations\" />
+  </ItemGroup>
+
 </Project>

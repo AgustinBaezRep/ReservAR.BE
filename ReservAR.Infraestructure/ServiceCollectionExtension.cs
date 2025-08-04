@@ -31,10 +31,12 @@ namespace ReservAR.Infraestructure
 
         public static IServiceCollection AddPersistance(this IServiceCollection services)
         {
-            const string connectionString = CONNECTION_STRING;
-
-            services.AddDbContext<ReservarDbContext>(
-                options => options.UseSqlServer(connectionString));
+            services.AddDbContext<ReservarDbContext>((sp, options) => options
+                .UseSqlServer(CONNECTION_STRING)
+                .AddInterceptors(
+                    sp.GetRequiredService<ConvertDomainEventsToOutboxMessagesInterceptor>(),
+                    sp.GetRequiredService<SaveAuditableDataInterceptor>()), 
+                    ServiceLifetime.Transient);
 
             services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
             services.AddScoped<SaveAuditableDataInterceptor>();
