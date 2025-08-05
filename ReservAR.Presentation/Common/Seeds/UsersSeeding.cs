@@ -8,7 +8,7 @@ public static class UsersSeeding
 {
     public static void Seed(ReservarDbContext context, ISender mediator)
     {
-        if (!context.Users.Any())
+        if (!context.Usuarios.Any())
         {
             List<CreateUserCommand> usersCommands = [];
 

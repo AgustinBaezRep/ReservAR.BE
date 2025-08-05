@@ -6,9 +6,9 @@ using ReservAR.Domain.UserAggregate.ValueObjects;
 
 namespace ReservAR.Infraestructure.Persistance.Repositories;
 
-internal class UserRepository(ReservarDbContext dbContext) : RepositoryBase<User, UserId>(dbContext), IUserRepository
+internal class UsuarioRepository(ReservarDbContext dbContext) : RepositoryBase<Usuario, UsuarioId>(dbContext), IUserRepository
 {
-    public async Task<User?> GetUserByEmailAsync(LoginCommand userCommand, CancellationToken cancellation)
+    public async Task<Usuario?> GetUserByEmailAsync(LoginCommand userCommand, CancellationToken cancellation)
     {
         var user = await DbQuery
             .FirstOrDefaultAsync(user => user.Email.Equals(userCommand.email));

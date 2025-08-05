@@ -12,7 +12,7 @@ public class CreateUserCommandHandlerTest : BaseTest<CreateUserCommandHandler>
 {
     private readonly Mock<IUserRepository> _userRepositoryMock;
     private readonly Mock<IAggregateLoader> _aggregateLoaderMock;
-    private readonly Domain.UserAggregate.User _userAggregate;
+    private readonly Domain.UserAggregate.Usuario _userAggregate;
     private readonly CreateUserCommand _createUserCommand;
     private readonly LoginCommand _loginCommand;
 
@@ -24,7 +24,7 @@ public class CreateUserCommandHandlerTest : BaseTest<CreateUserCommandHandler>
     {
         _userRepositoryMock = new Mock<IUserRepository>();
         _aggregateLoaderMock = new Mock<IAggregateLoader>();
-        _userAggregate = Mock.Of<Domain.UserAggregate.User>();
+        _userAggregate = Mock.Of<Domain.UserAggregate.Usuario>();
 
         _cancellationToken = CancellationToken.None;
 
@@ -32,7 +32,7 @@ public class CreateUserCommandHandlerTest : BaseTest<CreateUserCommandHandler>
         _createUserCommand = _fixture.Create<CreateUserCommand>();
         _loginCommand = _fixture.Create<LoginCommand>();
 
-        _aggregateLoaderMock.Setup(s => s.CreateAggregate<Domain.UserAggregate.User, Domain.UserAggregate.ValueObjects.UserId>())
+        _aggregateLoaderMock.Setup(s => s.CreateAggregate<Domain.UserAggregate.Usuario, Domain.UserAggregate.ValueObjects.UsuarioId>())
             .Returns(_userAggregate);
 
         Mock.Get(_userAggregate).Setup(s => s.Create(_createUserCommand.firstName,
