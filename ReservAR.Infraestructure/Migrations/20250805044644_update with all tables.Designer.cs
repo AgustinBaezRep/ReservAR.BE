@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservAR.Infraestructure.Persistance;
 
@@ -11,9 +12,11 @@ using ReservAR.Infraestructure.Persistance;
 namespace ReservAR.Infraestructure.Migrations
 {
     [DbContext(typeof(ReservarDbContext))]
-    partial class ReservarDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250805044644_update with all tables")]
+    partial class updatewithalltables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

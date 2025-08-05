@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using ReservAR.Domain.ComplejoAggregate.ValueObjects;
+using ReservAR.Domain.RolAggregate.ValueObjects;
 using ReservAR.Domain.UserAggregate;
 using ReservAR.Domain.UserAggregate.ValueObjects;
 

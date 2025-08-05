@@ -1,4 +1,9 @@
 ﻿using ReservAR.Domain.Common.Models;
+using ReservAR.Domain.ComplejoAggregate;
+using ReservAR.Domain.ComplejoAggregate.ValueObjects;
+using ReservAR.Domain.ReservaAggregate;
+using ReservAR.Domain.RolAggregate;
+using ReservAR.Domain.RolAggregate.ValueObjects;
 using ReservAR.Domain.UserAggregate.Events;
 using ReservAR.Domain.UserAggregate.ValueObjects;
 using System.Numerics;
@@ -17,6 +22,7 @@ public class Usuario : AggregateRoot<UsuarioId>
     public ComplejoId IdComplejo { get; set; }
     public Complejo Complejo { get; } = new();
 
+    public ICollection<Reserva>? Reservas { get; }
 
     public Usuario() : base() { }
 
@@ -26,8 +32,8 @@ public class Usuario : AggregateRoot<UsuarioId>
         string password)
     {
         Id = UsuarioId.CreateUnique();
-        FirstName = firstName;
-        LastName = lastName;
+        Nombre = firstName;
+        Apellido = lastName;
         Email = email;
         Password = password;
 
