@@ -10,13 +10,13 @@ namespace ReservAR.Domain.ConsumoConfiguration;
 
 public sealed class Consumo : AggregateRoot<ConsumoId>
 {
-    public string Concepto { get; set; } = string.Empty;
-    public DateTime FechaHora { get; set; } = DateTime.UtcNow;
-    public int? Cantidad { get; set; }
-    public ReservaId? IdReserva { get; set; }
+    public string Concepto { get; private set; } = string.Empty;
+    public DateTime FechaHora { get; private set; } = DateTime.UtcNow;
+    public int? Cantidad { get; private set; }
+    public ReservaId? IdReserva { get; private set; }
     public Reserva? Reserva { get; }
-    public ComplejoId IdComplejo { get; set; }
-    public Complejo Complejo { get; } = new();
+    public ComplejoId IdComplejo { get; private set; }
+    public Complejo Complejo { get; }
 
     public ICollection<ProductoConsumo>? ProductosConsumo { get; }
 

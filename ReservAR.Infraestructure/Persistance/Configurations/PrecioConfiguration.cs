@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ReservAR.Domain.CanchaAggregate.ValueObjects;
 using ReservAR.Domain.PrecioAggregate;
+using ReservAR.Domain.PrecioAggregate.Enums;
 using ReservAR.Domain.PrecioAggregate.ValueObjects;
 
 namespace ReservAR.Infraestructure.Persistance.Configurations;

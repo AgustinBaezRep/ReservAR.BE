@@ -12,15 +12,15 @@ namespace ReservAR.Domain.UserAggregate;
 
 public class Usuario : AggregateRoot<UsuarioId>
 {
-    public string Nombre { get; set; } = string.Empty;
-    public string Apellido { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
-    public long Telefono { get; set; }
-    public RolId IdRol { get; set; }
-    public Rol Rol { get; } = new();
-    public ComplejoId IdComplejo { get; set; }
-    public Complejo Complejo { get; } = new();
+    public string Nombre { get; private set; }
+    public string Apellido { get; private set; }
+    public string Email { get; private set; }
+    public string Password { get; private set; }
+    public long Telefono { get; private set; }
+    public RolId IdRol { get; private set; }
+    public Rol Rol { get; }
+    public ComplejoId IdComplejo { get; private set; }
+    public Complejo Complejo { get; }
 
     public ICollection<Reserva>? Reservas { get; }
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ReservAR.Domain.PisoAggregate;
+using ReservAR.Domain.PisoAggregate.Enums;
 using ReservAR.Domain.PisoAggregate.ValueObjects;
 
 namespace ReservAR.Infraestructure.Persistance.Configurations;

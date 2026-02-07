@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ReservAR.Domain.CanchaAggregate.ValueObjects;
 using ReservAR.Domain.ReservaAggregate;
+using ReservAR.Domain.ReservaAggregate.Enums;
 using ReservAR.Domain.ReservaAggregate.ValueObjects;
 using ReservAR.Domain.UserAggregate.ValueObjects;
 

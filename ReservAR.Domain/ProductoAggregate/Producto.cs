@@ -8,12 +8,12 @@ namespace ReservAR.Domain.ProductoAggregate;
 
 public sealed class Producto : AggregateRoot<ProductoId>
 {
-    public string Descripcion { get; set; } = string.Empty;
-    public double? PrecioCompra { get; set; }
-    public double PrecioVenta { get; set; }
-    public int Stock { get; set; }
-    public ComplejoId IdComplejo { get; set; }
-    public Complejo Complejo { get; } = new();
+    public string Descripcion { get; private set; } = string.Empty;
+    public double? PrecioCompra { get; private set; }
+    public double PrecioVenta { get; private set; }
+    public int Stock { get; private set; }
+    public ComplejoId IdComplejo { get; private set; }
+    public Complejo Complejo { get; }
 
     public ICollection<ProductoConsumo>? ProductosConsumo { get; }
 
