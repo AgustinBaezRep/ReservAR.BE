@@ -9,10 +9,10 @@ namespace ReservAR.Domain.ProductoConsumoAggregate;
 
 public sealed class ProductoConsumo : AggregateRoot<ProductoConsumoId>
 {
-    public ConsumoId IdConsumo { get; set; }
-    public Consumo Consumo { get; set; } = new();
-    public ProductoId IdProducto { get; set; }
-    public Producto Producto { get; set; } = new();
+    public ConsumoId IdConsumo { get; private set; }
+    public Consumo Consumo { get; }
+    public ProductoId IdProducto { get; private set; }
+    public Producto Producto { get; }
 
     public ProductoConsumo() : base() { }
 }

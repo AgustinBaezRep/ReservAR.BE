@@ -5,7 +5,7 @@ namespace ReservAR.Domain.RolAggregate;
 
 public sealed class Rol : AggregateRoot<RolId>
 {
-    public string Descripcion { get; set; } = string.Empty;
+    public string Descripcion { get; private set; }
 
     public Rol() : base() { }
 }

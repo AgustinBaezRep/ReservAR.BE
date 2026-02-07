@@ -5,9 +5,9 @@ namespace ReservAR.Domain.DireccionAggregate;
 
 public sealed class Direccion : AggregateRoot<DireccionId>
 {
-    public string Descripcion { get; set; } = string.Empty;
-    public string? CoordenadaX { get; set; }
-    public string? CoordenadaY { get; set; }
+    public string Descripcion { get; private set; } = string.Empty;
+    public string? CoordenadaX { get; private set; }
+    public string? CoordenadaY { get; private set; }
 
     public Direccion() : base() { }
 }
