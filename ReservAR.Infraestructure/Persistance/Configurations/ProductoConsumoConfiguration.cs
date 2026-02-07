@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservAR.Domain.ConsumoConfiguration.ValueObjects;
+using ReservAR.Domain.ConsumoAggregate.ValueObjects;
 using ReservAR.Domain.ProductoAggregate.ValueObjects;
 using ReservAR.Domain.ProductoConsumoAggregate;
 using ReservAR.Domain.ProductoConsumoAggregate.ValueObjects;

@@ -1,23 +1,29 @@
-﻿using MediatR;
-using ReservAR.Application.User.Commands.Create;
+﻿using ReservAR.Domain.ComplejoAggregate.ValueObjects;
+using ReservAR.Domain.RolAggregate.ValueObjects;
+using ReservAR.Domain.UserAggregate;
+using ReservAR.Domain.UserAggregate.ValueObjects;
 using ReservAR.Infraestructure.Persistance;
 
 namespace ReservAR.Presentation.Common.Seeds;
 
 public static class UsersSeeding
 {
-    public static void Seed(ReservarDbContext context, ISender mediator)
+    public static void Seed(ReservarDbContext context)
     {
         if (!context.Usuarios.Any())
         {
-            List<CreateUserCommand> usersCommands = [];
+            var usuario = new Usuario();
+            usuario.Create(
+                "Agustin Ramiro",
+                "Baez",
+                "agustinBaez155@gmail.com",
+                "abc123",
+                ComplejosSeeding.DefaultComplejoId,
+                RolesSeeding.AdminRolId
+            );
 
-            usersCommands.Add(new CreateUserCommand("Agustin Ramiro", "Baez", "agustinBaez155@gmail.com", "abc123"));
-
-            foreach(var user in usersCommands)
-            {
-                mediator.Send(user).GetAwaiter().GetResult();
-            }
+            context.Usuarios.Add(usuario);
+            context.SaveChanges();
         }
     }
 }

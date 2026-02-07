@@ -3,7 +3,7 @@ using ReservAR.Domain.AtributoAggregate;
 using ReservAR.Domain.CanchaAggregate;
 using ReservAR.Domain.Common.Models;
 using ReservAR.Domain.ComplejoAggregate;
-using ReservAR.Domain.ConsumoConfiguration;
+using ReservAR.Domain.ConsumoAggregate;
 using ReservAR.Domain.DeporteAggregate;
 using ReservAR.Domain.DireccionAggregate;
 using ReservAR.Domain.DisponibilidadHorariaAggregate;
@@ -23,8 +23,10 @@ namespace ReservAR.Infraestructure.Persistance
     {
         public DbSet<OutboxMessage> OutboxMessages => Set<OutboxMessage>();
         public DbSet<Cancha> Canchas => Set<Cancha>();
+        public DbSet<AtributoCancha> AtributoCanchas => Set<AtributoCancha>();
         public DbSet<Reserva> Reservas => Set<Reserva>();
         public DbSet<Complejo> Complejos => Set<Complejo>();
+        public DbSet<ServicioComplejo> ServiciosComplejo => Set<ServicioComplejo>();
         public DbSet<Consumo> Consumos => Set<Consumo>();
         public DbSet<ProductoConsumo> ProductosConsumo => Set<ProductoConsumo>();
         public DbSet<Producto> Productos => Set<Producto>();

@@ -1,6 +1,6 @@
 ﻿using ReservAR.Domain.Common.Models.Identities;
 
-namespace ReservAR.Domain.ConsumoConfiguration.ValueObjects;
+namespace ReservAR.Domain.ConsumoAggregate.ValueObjects;
 
 public class ConsumoId : AggregateRootId
 {

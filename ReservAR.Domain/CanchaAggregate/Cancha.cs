@@ -25,7 +25,7 @@ public class Cancha : AggregateRoot<CanchaId>
     public Piso TipoPiso { get; }
 
     public ICollection<Reserva>? Reservas { get; }
-    public ICollection<Atributo>? Atributos { get; }
+    public ICollection<AtributoCancha>? Atributos { get; }
     public ICollection<Precio>? Precios { get; }
 
     public Cancha() : base() { }

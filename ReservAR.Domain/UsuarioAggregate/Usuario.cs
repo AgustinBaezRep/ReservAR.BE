@@ -29,13 +29,21 @@ public class Usuario : AggregateRoot<UsuarioId>
     public virtual void Create(string firstName,
         string lastName,
         string email,
-        string password)
+        string password,
+        ComplejoId? complejoId = null,
+        RolId? rolId = null)
     {
         Id = UsuarioId.CreateUnique();
         Nombre = firstName;
         Apellido = lastName;
         Email = email;
         Password = password;
+        
+        if (complejoId is not null)
+            IdComplejo = complejoId;
+        
+        if (rolId is not null)
+            IdRol = rolId;
 
         AddDomainEvent(new UsuarioCreated(this));
     }
