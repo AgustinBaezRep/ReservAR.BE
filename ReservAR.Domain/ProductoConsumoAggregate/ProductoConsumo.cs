@@ -1,6 +1,6 @@
 ﻿using ReservAR.Domain.Common.Models;
-using ReservAR.Domain.ConsumoConfiguration;
-using ReservAR.Domain.ConsumoConfiguration.ValueObjects;
+using ReservAR.Domain.ConsumoAggregate;
+using ReservAR.Domain.ConsumoAggregate.ValueObjects;
 using ReservAR.Domain.ProductoAggregate;
 using ReservAR.Domain.ProductoAggregate.ValueObjects;
 using ReservAR.Domain.ProductoConsumoAggregate.ValueObjects;

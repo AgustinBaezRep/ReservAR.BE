@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservAR.Domain.ComplejoAggregate.ValueObjects;
+
 using ReservAR.Domain.ServicioAggregate;
 using ReservAR.Domain.ServicioAggregate.ValueObjects;
 
@@ -28,16 +28,6 @@ public sealed class ServicioConfiguration : IEntityTypeConfiguration<Servicio>
         builder.Property(s => s.Activo)
             .HasDefaultValue(false);
 
-        builder.HasOne(builder => builder.Complejo)
-            .WithMany(c => c.Servicios)
-            .HasForeignKey(s => s.IdComplejo)
-            .IsRequired(false)
-            .OnDelete(DeleteBehavior.NoAction);
 
-        builder.Property(x => x.IdComplejo)
-            .ValueGeneratedNever()
-            .HasConversion(
-                id => id.Value,
-                value => ComplejoId.Create(value));
     }
 }

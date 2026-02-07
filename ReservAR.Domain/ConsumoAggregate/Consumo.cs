@@ -1,12 +1,12 @@
 ﻿using ReservAR.Domain.Common.Models;
 using ReservAR.Domain.ComplejoAggregate;
 using ReservAR.Domain.ComplejoAggregate.ValueObjects;
-using ReservAR.Domain.ConsumoConfiguration.ValueObjects;
+using ReservAR.Domain.ConsumoAggregate.ValueObjects;
 using ReservAR.Domain.ProductoConsumoAggregate;
 using ReservAR.Domain.ReservaAggregate;
 using ReservAR.Domain.ReservaAggregate.ValueObjects;
 
-namespace ReservAR.Domain.ConsumoConfiguration;
+namespace ReservAR.Domain.ConsumoAggregate;
 
 public sealed class Consumo : AggregateRoot<ConsumoId>
 {

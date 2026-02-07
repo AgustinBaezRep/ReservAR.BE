@@ -1,7 +1,7 @@
 ﻿using ReservAR.Domain.CanchaAggregate;
 using ReservAR.Domain.Common.Models;
 using ReservAR.Domain.ComplejoAggregate.ValueObjects;
-using ReservAR.Domain.ConsumoConfiguration;
+using ReservAR.Domain.ConsumoAggregate;
 using ReservAR.Domain.DireccionAggregate;
 using ReservAR.Domain.DireccionAggregate.ValueObjects;
 using ReservAR.Domain.DisponibilidadHorariaAggregate;
@@ -23,7 +23,7 @@ public sealed class Complejo : AggregateRoot<ComplejoId>
     public ICollection<Producto>? Productos { get; }
     public ICollection<Consumo>? Consumos { get; }
     public ICollection<Cancha>? Canchas { get; }
-    public ICollection<Servicio>? Servicios { get; }
+    public ICollection<ServicioComplejo>? Servicios { get; }
     public ICollection<DisponibilidadHoraria>? DisponibilidadesHorarias { get; }
 
     public Complejo() : base() { }

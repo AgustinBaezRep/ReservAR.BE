@@ -38,7 +38,9 @@ public class CreateUserCommandHandlerTest : BaseTest<CreateUserCommandHandler>
         Mock.Get(_userAggregate).Setup(s => s.Create(_createUserCommand.firstName,
             _createUserCommand.lastName,
             _createUserCommand.email,
-            _createUserCommand.password));
+            _createUserCommand.password,
+            null,
+            null));
 
         SUT = new CreateUserCommandHandler(_userRepositoryMock.Object,
             _aggregateLoaderMock.Object);
