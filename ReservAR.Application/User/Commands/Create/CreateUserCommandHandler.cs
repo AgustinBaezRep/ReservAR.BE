@@ -19,7 +19,7 @@ public sealed class CreateUserCommandHandler(IUserRepository userRepository,
     public async Task<ErrorOr<Created>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
         var loginCommand = request.ToLoginCommand();
-
+        //modulo reserva
         var existingUser = await _userRepository.GetUserByEmailAsync(loginCommand, cancellationToken);
 
         if (existingUser is not null)
